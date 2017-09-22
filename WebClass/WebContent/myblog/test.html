@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style>
+      .button {
+        transition: width 1s ease 0s;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+
+      .size {
+        width: 0px;
+      }
+    </style>
+    <script>
+      var class_size = 'size';
+      var class_origin = 'button';
+      function change() {
+        var a = document.getElementById("div");
+
+        a.setAttribute("class", class_origin+ " " +class_size);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="button" id="div">
+
+    </div>
+    <button type="button" onclick="change();">button</button>
+  </body>
+</html>
