@@ -20,14 +20,14 @@ import com.google.gson.JsonObject;
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet("/login")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/bloglogin")
+public class BlogLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginServlet() {
+    public BlogLoginServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -46,14 +46,20 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		System.out.println("asdfasdf");
+		
 		request.setCharacterEncoding("utf-8");
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
 		System.out.printf("id: %s , pwd: %s\n", id, pwd);
 		
 		
-		boolean result = true;
-		
+		boolean result;
+		if("test@naver.com".equals(id)) result=true;
+		else result = false;
+			
+			
+			
 		if(result) {
 			HttpSession session = request.getSession();
 			UserVO user = new UserVO();
@@ -63,14 +69,14 @@ public class LoginServlet extends HttpServlet {
 			
 			session.setAttribute("user", user);
 			
-			RequestDispatcher rd = request.getRequestDispatcher("jsp/home.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("jsp/index.jsp");
 			
 			rd.forward(request, response);
 		} else {
 			
 			request.setAttribute("msg", "error");
 			
-			RequestDispatcher rd = request.getRequestDispatcher("jsp/login.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("jsp/index.jsp");
 			rd.forward(request, response);
 		}
 		
