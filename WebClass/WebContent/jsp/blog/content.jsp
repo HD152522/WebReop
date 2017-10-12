@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <img src="../image/bernard.jpg" style="width: 100%;" id="home" alt="베르나르 베르베르">
+<img src="image/bernard.jpg" style="width: 100%;" id="home">
 
     <hr class="anchor" id="p1">
     <div class="container" >
