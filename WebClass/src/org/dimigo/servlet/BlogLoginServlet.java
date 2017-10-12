@@ -36,7 +36,7 @@ public class BlogLoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// jsp Æ÷¿öµù
+		// jsp ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		RequestDispatcher rd = request.getRequestDispatcher("jsp/login.jsp");
 		rd.forward(request, response);
 	}
@@ -64,8 +64,8 @@ public class BlogLoginServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			UserVO user = new UserVO();
 			user.setId(id);
-			user.setName("È«±æµ¿");
-			user.setNickname("ÀÇÀû");
+			user.setName("í™ê¸¸ë™");
+			user.setNickname("í™ê¸¸ë™");
 			
 			session.setAttribute("user", user);
 			
